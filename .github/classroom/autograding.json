@@ -12,7 +12,7 @@
     },
     {
       "name": "Run Unit Tests",
-      "setup": "sudo -H pip3 install pytest",
+      "setup": "sudo -H pip3 install pytest & sudo -H pip3 install matplotlib & sudo -H pip3 install numpy",
       "run": "python ./run_tests.py",
       "input": "",
       "output": "",
