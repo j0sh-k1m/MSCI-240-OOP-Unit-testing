@@ -1,0 +1,295 @@
+test_charge_error1 (test.test_speaker.TestSpeaker.test_charge_error1)
+Input: ... ok
+test_charge_typical1 (test.test_speaker.TestSpeaker.test_charge_typical1)
+Input: ... ok
+test_connect_error1 (test.test_speaker.TestSpeaker.test_connect_error1)
+Input: ... ok
+test_connect_error2 (test.test_speaker.TestSpeaker.test_connect_error2)
+Input: ... ok
+test_connect_error3 (test.test_speaker.TestSpeaker.test_connect_error3)
+Testing case where speaker is not turned on ... ok
+test_connect_typical1 (test.test_speaker.TestSpeaker.test_connect_typical1)
+Testing the mutation of the connect method ... ok
+test_connect_typical2 (test.test_speaker.TestSpeaker.test_connect_typical2)
+Input: ... ok
+test_constructor_error1 (test.test_speaker.TestSpeaker.test_constructor_error1)
+Input: ... ok
+test_constructor_error10 (test.test_speaker.TestSpeaker.test_constructor_error10)
+Input: ... ok
+test_constructor_error11 (test.test_speaker.TestSpeaker.test_constructor_error11)
+Input: ... ok
+test_constructor_error12 (test.test_speaker.TestSpeaker.test_constructor_error12)
+Input: ... ok
+test_constructor_error2 (test.test_speaker.TestSpeaker.test_constructor_error2)
+Input: ... ok
+test_constructor_error3 (test.test_speaker.TestSpeaker.test_constructor_error3)
+Input: ... ok
+test_constructor_error4 (test.test_speaker.TestSpeaker.test_constructor_error4)
+Input: ... ok
+test_constructor_error5 (test.test_speaker.TestSpeaker.test_constructor_error5)
+Input: ... ok
+test_constructor_error6 (test.test_speaker.TestSpeaker.test_constructor_error6)
+Input: ... ok
+test_constructor_error7 (test.test_speaker.TestSpeaker.test_constructor_error7)
+Input: ... ok
+test_constructor_error8 (test.test_speaker.TestSpeaker.test_constructor_error8)
+Input: ... ok
+test_constructor_error9 (test.test_speaker.TestSpeaker.test_constructor_error9)
+Input: ... ok
+test_constructor_typical1 (test.test_speaker.TestSpeaker.test_constructor_typical1)
+Input: ' ... ok
+test_constructor_typical2 (test.test_speaker.TestSpeaker.test_constructor_typical2)
+Input: ... ok
+test_constructor_typical3 (test.test_speaker.TestSpeaker.test_constructor_typical3)
+Input: ... ok
+test_constructor_typical4 (test.test_speaker.TestSpeaker.test_constructor_typical4)
+Input: ... ok
+test_constructor_typical5 (test.test_speaker.TestSpeaker.test_constructor_typical5)
+Input: ... ok
+test_constructor_typical6 (test.test_speaker.TestSpeaker.test_constructor_typical6)
+Input: ... ok
+test_constructor_typical7 (test.test_speaker.TestSpeaker.test_constructor_typical7)
+Input: ... ok
+test_constructor_unusual1 (test.test_speaker.TestSpeaker.test_constructor_unusual1)
+Input: ... ok
+test_constructor_unusual2 (test.test_speaker.TestSpeaker.test_constructor_unusual2)
+Input: ... ok
+test_constructor_unusual3 (test.test_speaker.TestSpeaker.test_constructor_unusual3)
+Input: ... ok
+test_constructor_unusual4 (test.test_speaker.TestSpeaker.test_constructor_unusual4)
+Input: ... ok
+test_delete_song_from_queue_error1 (test.test_speaker.TestSpeaker.test_delete_song_from_queue_error1)
+when the speaker is not turned on ... ok
+test_delete_song_from_queue_error2 (test.test_speaker.TestSpeaker.test_delete_song_from_queue_error2)
+when the track specified is not in the queue but correct type ... ok
+test_delete_song_from_queue_error3 (test.test_speaker.TestSpeaker.test_delete_song_from_queue_error3)
+Input: ... ok
+test_delete_song_from_queue_error4 (test.test_speaker.TestSpeaker.test_delete_song_from_queue_error4)
+Input: ... ok
+test_delete_song_from_queue_error5 (test.test_speaker.TestSpeaker.test_delete_song_from_queue_error5)
+Input: ... ok
+test_delete_song_from_queue_error6 (test.test_speaker.TestSpeaker.test_delete_song_from_queue_error6)
+Input: ... ok
+test_delete_song_from_queue_error7 (test.test_speaker.TestSpeaker.test_delete_song_from_queue_error7)
+Input: ... ok
+test_delete_song_from_queue_error8 (test.test_speaker.TestSpeaker.test_delete_song_from_queue_error8)
+Check the case where there are no songs in the queue ... ok
+test_delete_song_from_queue_typical1 (test.test_speaker.TestSpeaker.test_delete_song_from_queue_typical1)
+Input: ... ok
+test_delete_song_from_queue_typical2 (test.test_speaker.TestSpeaker.test_delete_song_from_queue_typical2)
+Input: ... ok
+test_disconnect_error1 (test.test_speaker.TestSpeaker.test_disconnect_error1)
+Testing case where speaker is not turned on ... ok
+test_disconnect_error2 (test.test_speaker.TestSpeaker.test_disconnect_error2)
+Testing case where speaker is on but not connected to a device ... ok
+test_disconnect_typical1 (test.test_speaker.TestSpeaker.test_disconnect_typical1)
+Input: ... ok
+test_get_battery_percentage_typical1 (test.test_speaker.TestSpeaker.test_get_battery_percentage_typical1)
+Testing proper mutation and accessing of the current battery percentage ... ok
+test_get_connected_to_error1 (test.test_speaker.TestSpeaker.test_get_connected_to_error1)
+Testing the case where the speaker is turned off ... ok
+test_get_connected_to_typical1 (test.test_speaker.TestSpeaker.test_get_connected_to_typical1)
+Testing the accessing of the current connection ... ok
+test_get_currently_playing_error1 (test.test_speaker.TestSpeaker.test_get_currently_playing_error1)
+Testing the error case where the speaker is turned off ... ok
+test_get_currently_playing_typical1 (test.test_speaker.TestSpeaker.test_get_currently_playing_typical1)
+Testing proper mutation and accessing of the currently playing track ... ok
+test_get_equalizer_error1 (test.test_speaker.TestSpeaker.test_get_equalizer_error1)
+Testing the case where the speaker is turned off ... ok
+test_get_equalizer_typical1 (test.test_speaker.TestSpeaker.test_get_equalizer_typical1)
+Testing proper mutation and accessing of the equalizer ... ok
+test_get_max_batery_life_hours_typical1 (test.test_speaker.TestSpeaker.test_get_max_batery_life_hours_typical1)
+Testing proper mutation and accessing of the current battery percentage ... ok
+test_get_most_played_artists_error1 (test.test_speaker.TestSpeaker.test_get_most_played_artists_error1)
+Input: ... ok
+test_get_most_played_artists_error2 (test.test_speaker.TestSpeaker.test_get_most_played_artists_error2)
+Input: ... ok
+test_get_most_played_artists_error3 (test.test_speaker.TestSpeaker.test_get_most_played_artists_error3)
+Input: ... ok
+test_get_most_played_artists_error4 (test.test_speaker.TestSpeaker.test_get_most_played_artists_error4)
+Check the case where the speaker is not turned on ... ok
+test_get_most_played_artists_typical1 (test.test_speaker.TestSpeaker.test_get_most_played_artists_typical1)
+Testing proper computation of get_most_played_artists() ... ok
+test_get_most_played_artists_typical2 (test.test_speaker.TestSpeaker.test_get_most_played_artists_typical2)
+Input: ... ok
+test_get_most_played_artists_unusual1 (test.test_speaker.TestSpeaker.test_get_most_played_artists_unusual1)
+Input: ... ok
+test_get_queue_error1 (test.test_speaker.TestSpeaker.test_get_queue_error1)
+Testing the case where the speaker is turned off ... ok
+test_get_queue_typical1 (test.test_speaker.TestSpeaker.test_get_queue_typical1)
+Testing proper mutation and accessing of the queue of songs,podcasts etc ... ok
+test_get_remaining_battery_life_error1 (test.test_speaker.TestSpeaker.test_get_remaining_battery_life_error1)
+Testing case where speaker is turned off ... ok
+test_get_remaining_battery_life_typical1 (test.test_speaker.TestSpeaker.test_get_remaining_battery_life_typical1)
+Input: ... ok
+test_get_remaining_battery_life_typical2 (test.test_speaker.TestSpeaker.test_get_remaining_battery_life_typical2)
+Input: ... ok
+test_get_state_typical1 (test.test_speaker.TestSpeaker.test_get_state_typical1)
+Testing proper mutation and accessing of the 'turned_on' state ... ok
+test_get_state_typical2 (test.test_speaker.TestSpeaker.test_get_state_typical2)
+Testing proper mutation and accessing of the 'playing' state ... ok
+test_get_state_typical3 (test.test_speaker.TestSpeaker.test_get_state_typical3)
+Testing proper mutation and accessing of the 'charging' state ... ok
+test_get_volume_error1 (test.test_speaker.TestSpeaker.test_get_volume_error1)
+Testing case where speaker is turned off ... ok
+test_get_volume_typical1 (test.test_speaker.TestSpeaker.test_get_volume_typical1)
+Testing proper mutation and accessing of the current volume of the speaker ... ok
+test_pause_error1 (test.test_speaker.TestSpeaker.test_pause_error1)
+Test the case where the speaker is not turned on ... ok
+test_pause_error2 (test.test_speaker.TestSpeaker.test_pause_error2)
+Test case where speaker is already not playing audio (ie, paused) ... ok
+test_pause_typical1 (test.test_speaker.TestSpeaker.test_pause_typical1)
+Input: ... ok
+test_play_audio_error1 (test.test_speaker.TestSpeaker.test_play_audio_error1)
+Test the case where the speaker is turned off ... ok
+test_play_audio_error2 (test.test_speaker.TestSpeaker.test_play_audio_error2)
+Input: ... ok
+test_play_audio_error3 (test.test_speaker.TestSpeaker.test_play_audio_error3)
+Input: ... ok
+test_play_audio_error4 (test.test_speaker.TestSpeaker.test_play_audio_error4)
+Input: ... ok
+test_play_audio_error5 (test.test_speaker.TestSpeaker.test_play_audio_error5)
+Input: ... ok
+test_play_audio_error6 (test.test_speaker.TestSpeaker.test_play_audio_error6)
+Input: ... ok
+test_play_audio_error7 (test.test_speaker.TestSpeaker.test_play_audio_error7)
+Input: ... ok
+test_play_audio_error8 (test.test_speaker.TestSpeaker.test_play_audio_error8)
+Input: ... ok
+test_play_audio_typical1 (test.test_speaker.TestSpeaker.test_play_audio_typical1)
+Input: ... ok
+test_play_audio_typical2 (test.test_speaker.TestSpeaker.test_play_audio_typical2)
+Input: ... ok
+test_play_audio_unusual1 (test.test_speaker.TestSpeaker.test_play_audio_unusual1)
+Input: ... ok
+test_play_error1 (test.test_speaker.TestSpeaker.test_play_error1)
+Input: ... ok
+test_play_error2 (test.test_speaker.TestSpeaker.test_play_error2)
+Input: ... ok
+test_play_typical1 (test.test_speaker.TestSpeaker.test_play_typical1)
+Input: ... ok
+test_play_typical2 (test.test_speaker.TestSpeaker.test_play_typical2)
+Input: ... ok
+test_queue_error1 (test.test_speaker.TestSpeaker.test_queue_error1)
+Input: ... ok
+test_queue_error2 (test.test_speaker.TestSpeaker.test_queue_error2)
+Input: ... ok
+test_queue_error3 (test.test_speaker.TestSpeaker.test_queue_error3)
+Input: ... ok
+test_queue_error4 (test.test_speaker.TestSpeaker.test_queue_error4)
+Input: ... ok
+test_queue_error5 (test.test_speaker.TestSpeaker.test_queue_error5)
+Input: ... ok
+test_queue_error6 (test.test_speaker.TestSpeaker.test_queue_error6)
+Input: ... ok
+test_queue_error7 (test.test_speaker.TestSpeaker.test_queue_error7)
+Input: ... ok
+test_queue_error8 (test.test_speaker.TestSpeaker.test_queue_error8)
+Test case where the speaker is not turned on ... ok
+test_queue_typical1 (test.test_speaker.TestSpeaker.test_queue_typical1)
+Input: ... ok
+test_set_battery_percentage_error1 (test.test_speaker.TestSpeaker.test_set_battery_percentage_error1)
+Input: ... ok
+test_set_battery_percentage_error2 (test.test_speaker.TestSpeaker.test_set_battery_percentage_error2)
+Input: ... ok
+test_set_battery_percentage_error3 (test.test_speaker.TestSpeaker.test_set_battery_percentage_error3)
+Input: ... ok
+test_set_battery_percentage_typical1 (test.test_speaker.TestSpeaker.test_set_battery_percentage_typical1)
+Input: ... ok
+test_set_equalizer_error1 (test.test_speaker.TestSpeaker.test_set_equalizer_error1)
+Input: ... ok
+test_set_equalizer_error2 (test.test_speaker.TestSpeaker.test_set_equalizer_error2)
+Input: ... ok
+test_set_equalizer_error3 (test.test_speaker.TestSpeaker.test_set_equalizer_error3)
+Input: ... ok
+test_set_equalizer_error4 (test.test_speaker.TestSpeaker.test_set_equalizer_error4)
+Input: ... ok
+test_set_equalizer_error5 (test.test_speaker.TestSpeaker.test_set_equalizer_error5)
+Input: ... ok
+test_set_equalizer_error6 (test.test_speaker.TestSpeaker.test_set_equalizer_error6)
+Input: ... ok
+test_set_equalizer_error7 (test.test_speaker.TestSpeaker.test_set_equalizer_error7)
+Input: ... ok
+test_set_equalizer_error8 (test.test_speaker.TestSpeaker.test_set_equalizer_error8)
+Test the case where the speaker is not turned on ... ok
+test_set_equalizer_typical1 (test.test_speaker.TestSpeaker.test_set_equalizer_typical1)
+Input: ... ok
+test_set_equalizer_typical2 (test.test_speaker.TestSpeaker.test_set_equalizer_typical2)
+Input: ... ok
+test_set_equalizer_typical3 (test.test_speaker.TestSpeaker.test_set_equalizer_typical3)
+Input: ... ok
+test_set_max_battery_life_hours_error1 (test.test_speaker.TestSpeaker.test_set_max_battery_life_hours_error1)
+Input: ... ok
+test_set_max_battery_life_hours_error2 (test.test_speaker.TestSpeaker.test_set_max_battery_life_hours_error2)
+Input ... ok
+test_set_max_battery_life_hours_typical1 (test.test_speaker.TestSpeaker.test_set_max_battery_life_hours_typical1)
+Input: ... ok
+test_set_volume_error1 (test.test_speaker.TestSpeaker.test_set_volume_error1)
+Input: ... ok
+test_set_volume_error2 (test.test_speaker.TestSpeaker.test_set_volume_error2)
+Input: ... ok
+test_set_volume_error3 (test.test_speaker.TestSpeaker.test_set_volume_error3)
+Input: ... ok
+test_set_volume_error4 (test.test_speaker.TestSpeaker.test_set_volume_error4)
+Test case where speaker is not turned on ... ok
+test_set_volume_typical1 (test.test_speaker.TestSpeaker.test_set_volume_typical1)
+Input: ... ok
+test_skip_error1 (test.test_speaker.TestSpeaker.test_skip_error1)
+Test the case where the speaker is not turned on ... ok
+test_skip_error2 (test.test_speaker.TestSpeaker.test_skip_error2)
+Test the case where no songs exist the in the queue ... ok
+test_skip_typical1 (test.test_speaker.TestSpeaker.test_skip_typical1)
+Input: ... ok
+test_stop_charging_error1 (test.test_speaker.TestSpeaker.test_stop_charging_error1)
+Testing case where the speaker is already not charging ... ok
+test_stop_charging_typical1 (test.test_speaker.TestSpeaker.test_stop_charging_typical1)
+Input: ... ok
+test_turn_off_error1 (test.test_speaker.TestSpeaker.test_turn_off_error1)
+Testing that InvalidSpeakerOperationException is raised when trying to turn off the speaker ... ok
+test_turn_off_typical1 (test.test_speaker.TestSpeaker.test_turn_off_typical1)
+Testing the mutation of the turned_off state ... ok
+test_turn_off_typical2 (test.test_speaker.TestSpeaker.test_turn_off_typical2)
+Testing proper mutation of other variables ... ok
+test_turn_on_error1 (test.test_speaker.TestSpeaker.test_turn_on_error1)
+Testing that InvalidSpeakerOperationException is raised when trying to turn on the speaker when ... ok
+test_turn_on_typical1 (test.test_speaker.TestSpeaker.test_turn_on_typical1)
+Testing the mutation of the turned_on state ... ok
+test_update_information_error1 (test.test_speaker.TestSpeaker.test_update_information_error1)
+Input: ... ok
+test_update_information_error10 (test.test_speaker.TestSpeaker.test_update_information_error10)
+Input ... ok
+test_update_information_error2 (test.test_speaker.TestSpeaker.test_update_information_error2)
+Input: ... ok
+test_update_information_error3 (test.test_speaker.TestSpeaker.test_update_information_error3)
+Input: ... ok
+test_update_information_error4 (test.test_speaker.TestSpeaker.test_update_information_error4)
+Input: ... ok
+test_update_information_error5 (test.test_speaker.TestSpeaker.test_update_information_error5)
+Input: ... ok
+test_update_information_error6 (test.test_speaker.TestSpeaker.test_update_information_error6)
+Input: ... ok
+test_update_information_error7 (test.test_speaker.TestSpeaker.test_update_information_error7)
+Input: ... ok
+test_update_information_error8 (test.test_speaker.TestSpeaker.test_update_information_error8)
+Input: ... ok
+test_update_information_error9 (test.test_speaker.TestSpeaker.test_update_information_error9)
+Input: ... ok
+test_update_information_typical1 (test.test_speaker.TestSpeaker.test_update_information_typical1)
+Input: ... ok
+test_update_information_typical2 (test.test_speaker.TestSpeaker.test_update_information_typical2)
+Input: ... ok
+test_update_information_typical3 (test.test_speaker.TestSpeaker.test_update_information_typical3)
+Input: ... ok
+test_update_information_typical4 (test.test_speaker.TestSpeaker.test_update_information_typical4)
+Input: ... ok
+test_update_information_typical5 (test.test_speaker.TestSpeaker.test_update_information_typical5)
+Input: ... ok
+test_update_information_typical6 (test.test_speaker.TestSpeaker.test_update_information_typical6)
+Input: ... ok
+test_update_information_unusual1 (test.test_speaker.TestSpeaker.test_update_information_unusual1)
+Input: ... ok
+
+----------------------------------------------------------------------
+Ran 145 tests in 0.003s
+
+OK
