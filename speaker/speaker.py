@@ -11,7 +11,7 @@
 
 from typing import Union, List, Dict
 import sys 
-import pandas as pd  
+import pandas as pd 
 
 class Speaker:
     """ 
@@ -841,7 +841,54 @@ class Speaker:
 
     
     def __sizeof__(self):
-        return (sys.getsizeof(self._name) 
+        size = 0 
+
+        # Calculate size of elements of self._state
+        for k, v in self._state.items():
+            size += sys.getsizeof(k) + sys.getsizeof(v)
+
+        # calculate size of elements of self._equalizer
+        for k, v in self._equalizer.items():
+            size += sys.getsizeof(k) + sys.getsizeof(v)
+
+
+        # Calculate size of elements of self._queue 
+
+        # Get size of each element within list 
+        for i in range(len(self._queue)):
+            size += sys.getsizeof(self._queue[i])
+
+            # Get size of each key, value pair of each dictionary within the list 
+            for k, v in self._queue[i].items(): 
+                if isinstance(v, str):
+                    size += sys.getsizeof(k) + sys.getsizeof(v)
+
+                # key 'artist' may be a list of strings 
+                elif isinstance(v, list):
+                    size += sys.getsizeof(v)
+                    for item in v: 
+                        size += sys.getsizeof(item)
+
+
+        # Calculate size of elements in self._listening_history 
+        
+        # Get size of each element within list 
+        for i in range(len(self._listening_history)):
+            size += sys.getsizeof(self._listening_history[i])
+
+            # Get size of each key, value pair of each dictionary within the list 
+            for k, v in self._listening_history[i].items(): 
+                if isinstance(v, str):
+                    size += sys.getsizeof(k) + sys.getsizeof(v)
+                
+                # key 'artist' may be a list of strings 
+                elif isinstance(v, list):
+                    size += sys.getsizeof(v)
+                    for item in v: 
+                        size += sys.getsizeof(item)
+
+        return (size 
+                + sys.getsizeof(self._name) 
                 + sys.getsizeof(self._model) 
                 + sys.getsizeof(self._brand) 
                 + sys.getsizeof(self._price)
@@ -854,22 +901,230 @@ class Speaker:
                 + sys.getsizeof(self._battery_percentage)
                 + sys.getsizeof(self._max_battery_life_hours)
                 + sys.getsizeof(self._listening_history)) 
-    
 
+
+
+
+# RUNNING SPACE ANALYSIS
 if __name__ == '__main__':
 
-    # _name analysis 
+    INCREMENT = 100
+    MAX_INPUT_SIZE = 10000
+    STARTING_INPUT_SIZE = 1
+
+    ### _name data ###
     data = {"input_size": [], "class_size": []}
-    for i in range(1, 1000000, 10000):
+    for i in range(STARTING_INPUT_SIZE, MAX_INPUT_SIZE, INCREMENT):
         speaker = Speaker(name="JJK", brand="JBL", model="Flip6", price=190.00)
         speaker.update_information(name=("j" * i))
         data['input_size'].append(i)
         data['class_size'].append(sys.getsizeof(speaker))
     df = pd.DataFrame(data)
-    df.to_csv('_name.csv', index=False)
+    df.to_csv('./data/_name.csv', index=False)
+
+    ### _brand data ###
+    data = {"input_size": [], "class_size": []}
+    for i in range(STARTING_INPUT_SIZE, MAX_INPUT_SIZE, INCREMENT):
+        speaker = Speaker(name="JJK", brand="JBL", model="Flip6", price=190.00)
+        speaker.update_information(brand=("j" * i))
+        data['input_size'].append(i)
+        data['class_size'].append(sys.getsizeof(speaker))
+    df = pd.DataFrame(data)
+    df.to_csv('./data/_brand.csv', index=False)
+
+    ### _model data ###
+    data = {"input_size": [], "class_size": []}
+    for i in range(STARTING_INPUT_SIZE, MAX_INPUT_SIZE, INCREMENT):
+        speaker = Speaker(name="JJK", brand="JBL", model="Flip6", price=190.00)
+        speaker.update_information(model=("j" * i))
+        data['input_size'].append(i)
+        data['class_size'].append(sys.getsizeof(speaker))
+    df = pd.DataFrame(data)
+    df.to_csv('./data/_model.csv', index=False)
+
+    ### _connected_to data ###
+    data = {"input_size": [], "class_size": []}
+    for i in range(STARTING_INPUT_SIZE, MAX_INPUT_SIZE, INCREMENT):
+        speaker = Speaker(name="JJK", brand="JBL", model="Flip6", price=190.00)
+        speaker.turn_on()
+        speaker.connect(("j" * i))
+        data['input_size'].append(i)
+        data['class_size'].append(sys.getsizeof(speaker))
+    df = pd.DataFrame(data)
+    df.to_csv('./data/_connected_to.csv', index=False)
 
 
-        
+    ### _queue data ###
+
+    ### queue with artist as a string
+
+    # SMALLER queue with adding minimal songs (strings with 1 character)
+    data = {"input_size": [], "class_size": []}
+    speaker = Speaker(name="JJK", brand="JBL", model="Flip6", price=190.00)
+    speaker.turn_on()
+    for size in range(STARTING_INPUT_SIZE, MAX_INPUT_SIZE, INCREMENT):
+
+        queue = [{'title': 'j', 'artist': 'j', 'genre': 'j'}]*size
+        speaker._set_queue(queue=queue)
+        data['input_size'].append(size)
+        data['class_size'].append(sys.getsizeof(speaker))
+
+    df = pd.DataFrame(data)
+    df.to_csv('./data/_queue_minimal.csv', index=False)
+
+    # LARGER queue with adding larger songs (strings with 100 characters)
+    data = {"input_size": [], "class_size": []}
+    speaker = Speaker(name="JJK", brand="JBL", model="Flip6", price=190.00)
+    speaker.turn_on()
+    for size in range(STARTING_INPUT_SIZE, MAX_INPUT_SIZE, INCREMENT):
+        queue = [{'title': 'j'*100, 'artist': 'j'*100, 'genre': 'j'*100}]*size
+        speaker._set_queue(queue=queue)
+        data['input_size'].append(size)
+        data['class_size'].append(sys.getsizeof(speaker))
+
+    df = pd.DataFrame(data)
+    df.to_csv('./data/_queue_larger.csv', index=False)       
+
+
+    # -------------------------------------------------------------------------
+
+    ### queue with artist as a list ; seeing how class grows with increase in len(artist) ###
+
+    # SMALLER queue with internal dict key 'artist' being a list of data and minimal for other attributes
+    data = {"input_size": [], "class_size": []}
+
+    # max number of artists on a song will probably be around 10
+    NUM_ARTISTS = 10
+    for size in range(STARTING_INPUT_SIZE, MAX_INPUT_SIZE, INCREMENT):
+        speaker = Speaker(name="JJK", brand="JBL", model="Flip6", price=190.00)
+
+        # Increase size of array of artist by a factor if 'i'
+        queue = [{'title': 'j', 'artist': ['j']*NUM_ARTISTS, 'genre': 'j'}]*size
+        speaker._set_queue(queue=queue)
+        data['input_size'].append(size)
+        data['class_size'].append(sys.getsizeof(speaker))
+    
+    df = pd.DataFrame(data)
+    df.to_csv('./data/_queue_artist_list_minimal.csv', index=False)
+
+
+    # LARGER queue. Upper bound on Realistic large size values for queue
+    # String lengths are 100 and artist list length will increase
+    data = {"input_size": [], "class_size": []}
+
+    # max number of artists on a song will probably be around 10
+    NUM_ARTISTS = 10
+
+    for size in range(STARTING_INPUT_SIZE, MAX_INPUT_SIZE, INCREMENT):
+        speaker = Speaker(name="JJK", brand="JBL", model="Flip6", price=190.00)
+
+        # Increase size of array of artist by a factor if 'i'
+        queue = [{'title': 'j'*100, 'artist': ['j'*100]*NUM_ARTISTS, 'genre': 'j'*100}]*size
+        speaker._set_queue(queue=queue)
+        data['input_size'].append(size)
+        data['class_size'].append(sys.getsizeof(speaker))
+    
+    df = pd.DataFrame(data)
+    df.to_csv('./data/_queue_artist_list_larger.csv', index=False)
+
+    # ------------------------------------------------------------------------- 
+
+    ### listening history ### 
+
+    ### Minimal; artist is a string ###
+    data = {"input_size": [], "class_size": []}
+    for size in range(STARTING_INPUT_SIZE, MAX_INPUT_SIZE, INCREMENT):
+        speaker = Speaker(name="JJK", brand="JBL", model="Flip6", price=190.00)
+
+        history = [{'title': 'j', 'artist': 'j', 'genre': 'j'}]*size
+        speaker._set_listening_history(listening_history=history)
+        data['input_size'].append(size)
+        data['class_size'].append(sys.getsizeof(speaker))
+    
+    df = pd.DataFrame(data)
+    df.to_csv('./data/_history_minimal.csv', index=False)
+
+    ### Larger; artist is a string ### 
+    data = {"input_size": [], "class_size": []}
+    for size in range(STARTING_INPUT_SIZE, MAX_INPUT_SIZE, INCREMENT):
+        speaker = Speaker(name="JJK", brand="JBL", model="Flip6", price=190.00)
+
+        history = [{'title': 'j'*100, 'artist': 'j'*100, 'genre': 'j'*100}]*size
+        speaker._set_listening_history(listening_history=history)
+        data['input_size'].append(size)
+        data['class_size'].append(sys.getsizeof(speaker))
+    
+    df = pd.DataFrame(data)
+    df.to_csv('./data/_history_larger.csv', index=False)
+
+    # ------------------------------------------------------------------------- 
+
+    ### With artist list increasing in length ### (where list length, and string sizes are large)
+
+    # SMALLER queue with internal dict key 'artist' being a list of data and minimal for other attributes
+    data = {"input_size": [], "class_size": []}
+
+    # max number of artists on a song will probably be around 10
+    NUM_ARTISTS = 10
+    for size in range(STARTING_INPUT_SIZE, MAX_INPUT_SIZE, INCREMENT):
+        speaker = Speaker(name="JJK", brand="JBL", model="Flip6", price=190.00)
+
+        # Increase size of array of artist by a factor if 'i'
+        history = [{'title': 'j', 'artist': ['j']*NUM_ARTISTS, 'genre': 'j'}]*size
+        speaker._set_listening_history(history)
+        data['input_size'].append(size)
+        data['class_size'].append(sys.getsizeof(speaker))
+    
+    df = pd.DataFrame(data)
+    df.to_csv('./data/_history_artist_list_minimal.csv', index=False)
+
+
+    # LARGER queue. Upper bound on Realistic large size values for queue
+    # String lengths are 100 and artist list length will increase
+    data = {"input_size": [], "class_size": []}
+
+    # max number of artists on a song will probably be around 10
+    NUM_ARTISTS = 10
+
+    for size in range(STARTING_INPUT_SIZE, MAX_INPUT_SIZE, INCREMENT):
+        speaker = Speaker(name="JJK", brand="JBL", model="Flip6", price=190.00)
+
+        # Increase size of array of artist by a factor if 'i'
+        history = [{'title': 'j'*100, 'artist': ['j'*100]*NUM_ARTISTS, 'genre': 'j'*100}]*size
+        speaker._set_listening_history(history)
+        data['input_size'].append(size)
+        data['class_size'].append(sys.getsizeof(speaker))
+    
+    df = pd.DataFrame(data)
+    df.to_csv('./data/_history_artist_list_larger.csv', index=False)
+
+    # ------------------------------------------------------------------------- 
+
+    ### SOFT UPPER BOUND ON CLASS SIZE ###
+
+    data = {"input_size": [], "class_size": []}
+    # max number of artists on a song will probably be around 10
+    NUM_ARTISTS = 10
+
+    for size in range(STARTING_INPUT_SIZE, MAX_INPUT_SIZE, INCREMENT):
+        speaker = Speaker(name="JJK", brand="JBL", model="Flip6", price=190.00)
+        speaker.turn_on()
+
+        history = [{'title': 'j'*100, 'artist': ['j'*100]*NUM_ARTISTS, 'genre': 'j'*100}]*size
+        speaker._set_listening_history(history)
+
+        queue = [{'title': 'j'*100, 'artist': ['j'*100]*NUM_ARTISTS, 'genre': 'j'*100}]*size
+        speaker._set_queue(queue=queue)
+
+        speaker.update_information(name=("j" * i), brand=("j" * i), model=("j" * i))
+        speaker.connect("j"*size)
+
+        data['input_size'].append(size)
+        data['class_size'].append(sys.getsizeof(speaker))
+    
+    df = pd.DataFrame(data)
+    df.to_csv('./data/_max_class_size.csv', index=False)
+
 
 
 # Custom Class Exceptions

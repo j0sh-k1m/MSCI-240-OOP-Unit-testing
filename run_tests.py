@@ -11,19 +11,21 @@ from test.test_speaker import TestSpeaker
 import unittest
 
 
-# if __name__ == '__main__':
-#     unittest.main()
+if __name__ == '__main__':
+    unittest.main()
 
 
+# Below was used to output my test case results into a file. 
+# Easier to see what was going on
 
-import sys 
+# import sys 
   
-def main(out = sys.stderr, verbosity = 2): 
-    loader = unittest.TestLoader() 
+# def main(out = sys.stderr, verbosity = 2): 
+#     loader = unittest.TestLoader() 
   
-    suite = loader.loadTestsFromModule(sys.modules[__name__]) 
-    unittest.TextTestRunner(out, verbosity = verbosity).run(suite) 
+#     suite = loader.loadTestsFromModule(sys.modules[__name__]) 
+#     unittest.TextTestRunner(out, verbosity = verbosity).run(suite) 
       
-if __name__ == '__main__': 
-    with open('testing.out', 'w') as f: 
-        main(f) 
+# if __name__ == '__main__': 
+#     with open('testing.out', 'w') as f: 
+#         main(f) 
