@@ -5,7 +5,7 @@
 
 This is a Speaker class that mimics that of a wireless speaker. It has attributes such as 
 name, brand, mdoel, price and other attributes that manage speaker state, queueing music, 
-applying equalizer values to control frequency outputs. A listening history to allow the speaker            to provide your most listened to artists. 
+applying equalizer values to control frequency outputs. A listening history to allow the speaker to provide your most listened to artists. 
 
 
 # Test Instructions
@@ -19,18 +19,19 @@ To run the unit tests run the file run_tests.py as follows
 
 # Build Instructions
 
-Write your instructions here for how to build and run the program itself. (This might be needed only for part 2.)
+To Run space analysis, run the speaker.py file 
+
+1. Open Termimal (ctrl or cmd + backticks)
+2. Navigate to the directory of this file 
+3. run `pip install pandas`
+4. run `python speaker.py`
 
 
 # Acknowledgements
 
-https://docs.python.org/3/library/unittest.html 
-Used for looking at assertion related methods to see behaviors of methods and arguments 
+ChatGpt was used to understand how to use pandas to export data into a csv file
+ChatGpt was also used to understand the nuances of calculating lists and dictionaries along with the contents stored inside of them 
+ChatGpt was again used to figure out how to output test results into a file rather than log it into the terminal 
 
-ChatGpt was used to generate examples of objects that I could implement as a class 
-ChatGPT was also used to explain assertRaise() and how it works 
-ChatGPT was also used to generate some examples of behaviors that I should consider. 
-Exceptions (raising exceptions from trying to run mutations when the speaker was turned off) 
-
-https://stackoverflow.com/questions/1319615/proper-way-to-declare-custom-exceptions-in-modern-python 
-StackOverflow - How to create custom Exceptions 
+https://stackoverflow.com/questions/62161725/why-does-sys-getsizeof-return-a-value-that-is-33-bytes-more-than-the-actual-si
+explanation as how and why python sys.getsizeof() works under the hood

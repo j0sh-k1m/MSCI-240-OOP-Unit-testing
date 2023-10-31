@@ -1069,7 +1069,7 @@ if __name__ == '__main__':
     for size in range(STARTING_INPUT_SIZE, MAX_INPUT_SIZE, INCREMENT):
         speaker = Speaker(name="JJK", brand="JBL", model="Flip6", price=190.00)
 
-        # Increase size of array of artist by a factor if 'i'
+        # Increase size of array of artist
         history = [{'title': 'j', 'artist': ['j']*NUM_ARTISTS, 'genre': 'j'}]*size
         speaker._set_listening_history(history)
         data['input_size'].append(size)

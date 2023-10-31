@@ -1,10 +1,11 @@
 # test_speaker
 #
 # Author: Joshua Kim
-# Assignment 1A 
-# Date: October 8, 2023
+# Assignment 1B 
+# Date: October 30, 2023
 # Description: these are the test cases for the speaker class. It checks for proper usage of the class 
 #              and checks for proper mutation and accessing of class data. 
+
 # Inputs: Each unit test will have their own inputs for testing but none externally 
 # Outputs: Each unit test will either Pass or Fail depending if the implementations of the methods 
 #          works as intended 
